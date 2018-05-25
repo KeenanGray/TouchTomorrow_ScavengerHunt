@@ -534,7 +534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -7, y: 264}
+  m_AnchoredPosition: {x: -13.0250225, y: 408.99997}
   m_SizeDelta: {x: 731.94995, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &211457124
@@ -625,7 +625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -97.974976, y: 97}
+  m_AnchoredPosition: {x: -104, y: 242}
   m_SizeDelta: {x: 220, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &222204781
@@ -747,7 +747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -97.974976, y: 187.00012}
+  m_AnchoredPosition: {x: -104, y: 332.0001}
   m_SizeDelta: {x: 220, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &282562753
@@ -1012,7 +1012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.647583}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -1314}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &582847160
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1384,7 +1384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 204.02502, y: 289.10022}
+  m_AnchoredPosition: {x: 198, y: 434.1002}
   m_SizeDelta: {x: 347.2, y: 474.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001976398
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1912,8 +1912,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.5499878, y: 0.8000488}
+  m_AnchoredPosition: {x: -1.0259094, y: -76.20001}
+  m_SizeDelta: {x: -2.0518, y: 152.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1808266473
 CanvasRenderer:
@@ -2052,12 +2052,12 @@ Prefab:
     - target: {fileID: 224066112068999090, guid: 5d9fcb5e7bd9041b695d37e5dfa5a7df,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 365.97498
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224066112068999090, guid: 5d9fcb5e7bd9041b695d37e5dfa5a7df,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 731.94995
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224066112068999090, guid: 5d9fcb5e7bd9041b695d37e5dfa5a7df,
         type: 2}
@@ -2191,7 +2191,7 @@ GameObject:
   - component: {fileID: 2048772929}
   - component: {fileID: 2048772930}
   m_Layer: 0
-  m_Name: MainCanvas
+  m_Name: UI_Controller
   m_TagString: MainCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

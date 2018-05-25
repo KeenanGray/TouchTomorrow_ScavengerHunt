@@ -59,15 +59,15 @@ using Touch_Tomorrow;
             }
         }
 
-        public static void initNFCReader()
-        {
+    public static void initNFCReader()
+    {
 #if UNITY_IOS
         if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
             framework_init();
         }
 #endif
-        }
+    }
 
         public static void beginNFCSession()
         {
@@ -77,15 +77,7 @@ using Touch_Tomorrow;
             framework_beginNFCSession();
         }
 #endif
-
-
-#if UNITY_ANDROID
-            AndroidNFC.enableBackgroundScan();
-            AndroidNFC.ScanNFC("TickerTape", "OnFinishedScan");
-#endif
-
         }
-
 
         public static void message(string message)
         {

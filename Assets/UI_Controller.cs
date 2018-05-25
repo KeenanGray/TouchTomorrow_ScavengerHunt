@@ -10,7 +10,6 @@ public class UI_Controller : MonoBehaviour {
     public GameObject TickerTapeScreen;
     public GameObject TickerTapeContainer;
 
-
     // Use this for initialization
 	void Start () {
         SplashScreen.SetActive(true);
@@ -19,6 +18,7 @@ public class UI_Controller : MonoBehaviour {
 
         FrameworkBridge.initializeDelegate();
         FrameworkBridge.initNFCReader();
+
 	}
 
     // Update is called once per frame
@@ -47,6 +47,33 @@ public class UI_Controller : MonoBehaviour {
     {
         if(!TickerTapeContainer.GetComponent<TickerTapeContainer>().isTicking)
             FrameworkBridge.beginNFCSession();
+
+#if UNITY_ANDROID
+        //AndroidNFC.enableBackgroundScan();
+        AndroidNFC.ScanNFC("UI_Controller", "OnFinishScan");
+        #endif
+    }
+
+    // NFC callback
+    void OnFinishScan(string result)
+    {
+        Debug.Log("BackGround Scan");
+        if (result == AndroidNFC.CANCELLED)
+        {
+            // The user has canceled the scan (back button)
+        }
+        else if (result == AndroidNFC.ERROR)
+        {
+            // There was an error reading the NFC tag
+        }
+        else if (result == AndroidNFC.NO_HARDWARE)
+        {
+            // No NFC hardware available
+        }
+        // result contains the NFC tag text content
+        Debug.Log("result " + result);
+
+        CreateTickerTapeMessage(result);
     }
 
     IEnumerator ShowSplashScreen()

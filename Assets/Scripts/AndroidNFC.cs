@@ -1,13 +1,8 @@
-﻿//Developed from a tutorial by Nikunj Rola
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class AndroidNFC : MonoBehaviour
 {
-    //NFC Reader code from :
-    //https://github.com/twisprite-developers/unity-nfc-plugin
-    //Courtesy of Twinsprite developers
 
     static public readonly string ERROR = "ERROR";
     static public readonly string NO_HARDWARE = "NO_HARDWARE";
@@ -31,7 +26,6 @@ public class AndroidNFC : MonoBehaviour
         javaObject.Call("disableBackgroundScan");
 #endif
     }
-
 
     public static void ScanNFC(string objectName, string functionName)
     {
