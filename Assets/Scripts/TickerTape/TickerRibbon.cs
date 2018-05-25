@@ -15,55 +15,45 @@ namespace Touch_Tomorrow
         Vector2 normalizedPosition;
         Vector3 initPos;
 
+        GameObject MainCanvas;
+
         public float height = 0;
         public bool visible;
 
         private void Awake()
         {
             visible = false;
+            MainCanvas = GameObject.FindWithTag("MainCanvas");
         }
 
         private void Start()
         {
             //StartCoroutine("PositionRibbon");
+
+                float yOffset = 100;
+            Vector2 referenceSize = MainCanvas.GetComponent<RectTransform>().sizeDelta;
+            Vector2 referencePos = transform.parent.parent.parent.position;
+
+            gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2((referenceSize.x / 2.5f), 120);
+
+            Debug.Log("ref" + referenceSize.x / 2.5f);
+
+            if (name == "Backward")
+            {
+                gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(referenceSize.x - (referenceSize.x / 2.5f), yOffset);
+            }
+            else if (name == "Forward")
+            {
+                gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(referenceSize.x - (referenceSize.x / 2.5f) - GetComponent<RectTransform>().sizeDelta.x, yOffset);
+            }
+            else
+                Debug.LogWarning("This Script must be attached to a gameobject named 'Forward' or 'Backward' ");
+
         }
 
         private void Update()
         {
 
-        }
-
-        IEnumerator PositionRibbon()
-        {
-            WaitForSeconds delay = new WaitForSeconds(0.25f);
-            int cnt = 0;
-
-            while (true)
-            {
-                if (cnt < 10)
-                    cnt++;
-
-                float yOffset = 93;
-                Vector2 referenceSize = transform.parent.parent.parent.gameObject.GetComponent<RectTransform>().sizeDelta;
-                Vector2 referencePos = transform.parent.parent.parent.position;
-
-                gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2((referenceSize.x / 2.5f), 100);
-
-                if (name == "Backward")
-                {
-                    gameObject.GetComponentInParent<TickerText>().FirstChildPosition = referenceSize.x - (referenceSize.x / 2.5f);
-                    gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponentInParent<TickerText>().FirstChildPosition, yOffset);
-                }
-                else if (name == "Forward")
-                {
-                    gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(gameObject.GetComponentInParent<TickerText>().FirstChildPosition - referenceSize.x / 2.5f, yOffset);
-                }
-                else
-                    Debug.LogWarning("This Script must be attached to a gameobject named 'Forward' or 'Backward' ");
-
-                if (cnt > 10)
-                    yield return delay;
-            }
         }
 
         public void MakeVisible()
