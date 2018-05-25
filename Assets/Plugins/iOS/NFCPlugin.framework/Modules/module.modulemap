@@ -1,0 +1,11 @@
+framework module NFCPlugin {
+  umbrella header "NFCPlugin.h"
+
+  export *
+  module * { export * }
+}
+
+module NFCPlugin.Swift {
+    header "NFCPlugin-Swift.h"
+    requires objc
+}
