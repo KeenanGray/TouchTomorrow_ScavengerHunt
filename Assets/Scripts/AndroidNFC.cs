@@ -29,10 +29,8 @@ public class AndroidNFC : MonoBehaviour
 
     public static void ScanNFC(string objectName, string functionName)
     {
-
         switch (Application.platform)
         {
-
             case RuntimePlatform.Android:
                 AndroidJavaClass javaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
                 AndroidJavaObject javaObject = javaClass.GetStatic<AndroidJavaObject>("currentActivity");

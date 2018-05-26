@@ -36,8 +36,6 @@ namespace Touch_Tomorrow
 
             gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2((referenceSize.x / 2.5f), 120);
 
-            Debug.Log("ref" + referenceSize.x / 2.5f);
-
             if (name == "Backward")
             {
                 gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(referenceSize.x - (referenceSize.x / 2.5f), yOffset);
